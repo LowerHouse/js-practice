@@ -1,64 +1,126 @@
-let admin;
-let name;
-let a = 10;
-const MAX = 57;
+const container = document.querySelector('#container');
 
-name = 'John';
-console.log(name)
+const content = document.createElement('div');
+content.classList.add('content');
+content.textContent = 'This is the glorious text-content!';
 
-admin = name
+container.appendChild(content);
 
-//alert(admin)
+const pRed = document.createElement('p')
+pRed.classList.add('pRed')
+pRed.textContent = 'Hey, i\'m red!'
+pRed.style.cssText = 'color: red;'
 
-console.log(342 + 432)
-let sum = 5 + 4 + 30 + 5399 + 24 + 54;
+container.appendChild(pRed)
 
-console.log(sum)
+const h3Blue = document.createElement('h3')
+h3Blue.classList.add('h3Blue')
+h3Blue.textContent = 'Hey, i\'m blue h3!'
+h3Blue.style.cssText = 'color: blue;'
 
-console.log((4 + 6 + 9) / 77)
+container.appendChild(h3Blue)
 
-console.log(a)
 
-let actual = MAX - 13
-let percentage = actual/MAX
+const borderContainer = document.createElement('div');
+borderContainer.classList.add('borderContainer');
+borderContainer.style.cssText = 'border:black solid; background-color:pink;'
 
-console.log(percentage)
+const h1 = document.createElement('h1')
+h1.classList.add('h1')
+h1.textContent = 'i\'m in a div'
 
-console.log(`Hello ${name}`)
+borderContainer.appendChild(h1)
 
-let fruitList = "Apple, Banana, Kiwi";
-let part = fruitList.slice(7);
-console.log(part)
+const p = document.createElement('p')
+p.classList.add('p')
+p.textContent = 'ME TOO!'
 
-let greetings = 'Please visit Microsoft!';
-let newGreetings = greetings.replace('Microsoft', 'The odin Project')
-console.log(newGreetings)
+borderContainer.appendChild(p)
 
-let textToTrim = "      Hello World!      ";
-let trimText = textToTrim.trim();
+container.appendChild(borderContainer);
 
-console.log(trimText)
+const btn = document.querySelector('#btn');
+btn.onclick = () => alert("Hello World");
 
-function add7(num){
-    return num + 7
-}
+const btnE = document.querySelector('#btnE');
+btnE.addEventListener('click', (e) => {
+//   alert("Hello World");
+  console.log(e.target);
+  e.target.style.background = 'blue';
+});
 
-console.log(add7(3))
+const buttons = document.querySelectorAll('button');
 
-function multiply(num1, num2){
-    return num1*num2
-}
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
 
-console.log(multiply(3, 9))
+  // and for each one we add a 'click' listener
+  button.addEventListener('click', () => {
+    alert(button.id);
+  });
+});
+// let admin;
+// let name;
+// let a = 10;
+// const MAX = 57;
 
-function capitalize(str){
-    return str.slice(0, 1).toUpperCase() + str.slice(1).toLowerCase()
-}
+// name = 'John';
+// console.log(name)
 
-console.log(capitalize('kDlsSlaA ASDAKJD asdkjsadlk'))
+// admin = name
 
-function lastLetter(str){
-    return str.slice(-1)
-}
+// //alert(admin)
 
-console.log(lastLetter('asdkjskdjasdl'))
+// console.log(342 + 432)
+// let sum = 5 + 4 + 30 + 5399 + 24 + 54;
+
+// console.log(sum)
+
+// console.log((4 + 6 + 9) / 77)
+
+// console.log(a)
+
+// let actual = MAX - 13
+// let percentage = actual/MAX
+
+// console.log(percentage)
+
+// console.log(`Hello ${name}`)
+
+// let fruitList = "Apple, Banana, Kiwi";
+// let part = fruitList.slice(7);
+// console.log(part)
+
+// let greetings = 'Please visit Microsoft!';
+// let newGreetings = greetings.replace('Microsoft', 'The odin Project')
+// console.log(newGreetings)
+
+// let textToTrim = "      Hello World!      ";
+// let trimText = textToTrim.trim();
+
+// console.log(trimText)
+
+// function add7(num){
+//     return num + 7
+// }
+
+// console.log(add7(3))
+
+// function multiply(num1, num2){
+//     return num1*num2
+// }
+
+// console.log(multiply(3, 9))
+
+// function capitalize(str){
+//     return str.slice(0, 1).toUpperCase() + str.slice(1).toLowerCase()
+// }
+
+// console.log(capitalize('kDlsSlaA ASDAKJD asdkjsadlk'))
+
+// function lastLetter(str){
+//     return str.slice(-1)
+// }
+
+// console.log(lastLetter('asdkjskdjasdl'))
+
