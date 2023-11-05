@@ -1,64 +1,78 @@
-const container = document.querySelector('#container');
+const shopList = document.querySelector('.shopList')
 
-const content = document.createElement('div');
-content.classList.add('content');
-content.textContent = 'This is the glorious text-content!';
+function addItem(shopItem){
+    const item = document.createElement('li')
+    item.classList.add('item')
+    item.textContent = shopItem
+    shopList.appendChild(item)
+}
 
-container.appendChild(content);
-
-const pRed = document.createElement('p')
-pRed.classList.add('pRed')
-pRed.textContent = 'Hey, i\'m red!'
-pRed.style.cssText = 'color: red;'
-
-container.appendChild(pRed)
-
-const h3Blue = document.createElement('h3')
-h3Blue.classList.add('h3Blue')
-h3Blue.textContent = 'Hey, i\'m blue h3!'
-h3Blue.style.cssText = 'color: blue;'
-
-container.appendChild(h3Blue)
-
-
-const borderContainer = document.createElement('div');
-borderContainer.classList.add('borderContainer');
-borderContainer.style.cssText = 'border:black solid; background-color:pink;'
-
-const h1 = document.createElement('h1')
-h1.classList.add('h1')
-h1.textContent = 'i\'m in a div'
-
-borderContainer.appendChild(h1)
-
-const p = document.createElement('p')
-p.classList.add('p')
-p.textContent = 'ME TOO!'
-
-borderContainer.appendChild(p)
-
-container.appendChild(borderContainer);
-
-const btn = document.querySelector('#btn');
-btn.onclick = () => alert("Hello World");
-
-const btnE = document.querySelector('#btnE');
-btnE.addEventListener('click', (e) => {
-//   alert("Hello World");
-  console.log(e.target);
-  e.target.style.background = 'blue';
+const itemAddBtn = document.querySelector('#itemAddBtn');
+itemAddBtn.addEventListener('click', (e) => {
+    addItem(document.querySelector('#shopInput').value)
 });
 
-const buttons = document.querySelectorAll('button');
+// const container = document.querySelector('#container');
 
-// we use the .forEach method to iterate through each button
-buttons.forEach((button) => {
+// const content = document.createElement('div');
+// content.classList.add('content');
+// content.textContent = 'This is the glorious text-content!';
 
-  // and for each one we add a 'click' listener
-  button.addEventListener('click', () => {
-    alert(button.id);
-  });
-});
+// container.appendChild(content);
+
+// const pRed = document.createElement('p')
+// pRed.classList.add('pRed')
+// pRed.textContent = 'Hey, i\'m red!'
+// pRed.style.cssText = 'color: red;'
+
+// container.appendChild(pRed)
+
+// const h3Blue = document.createElement('h3')
+// h3Blue.classList.add('h3Blue')
+// h3Blue.textContent = 'Hey, i\'m blue h3!'
+// h3Blue.style.cssText = 'color: blue;'
+
+// container.appendChild(h3Blue)
+
+
+// const borderContainer = document.createElement('div');
+// borderContainer.classList.add('borderContainer');
+// borderContainer.style.cssText = 'border:black solid; background-color:pink;'
+
+// const h1 = document.createElement('h1')
+// h1.classList.add('h1')
+// h1.textContent = 'i\'m in a div'
+
+// borderContainer.appendChild(h1)
+
+// const p = document.createElement('p')
+// p.classList.add('p')
+// p.textContent = 'ME TOO!'
+
+// borderContainer.appendChild(p)
+
+// container.appendChild(borderContainer);
+
+// const btn = document.querySelector('#btn');
+// btn.onclick = () => alert("Hello World");
+
+// const btnE = document.querySelector('#btnE');
+// btnE.addEventListener('click', (e) => {
+// //   alert("Hello World");
+//   console.log(e.target);
+//   e.target.style.background = 'blue';
+// });
+
+// const buttons = document.querySelectorAll('button');
+
+// // we use the .forEach method to iterate through each button
+// buttons.forEach((button) => {
+
+//   // and for each one we add a 'click' listener
+//   button.addEventListener('click', () => {
+//     alert(button.id);
+//   });
+// });
 // let admin;
 // let name;
 // let a = 10;
